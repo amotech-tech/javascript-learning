@@ -27,6 +27,12 @@
 
         <br><br>
 
+         <label>confirm Password:</label>
+        <input type="password" id="confirm-password">
+        <small id="confirmpasswordError"></small>
+
+        <br><br>
+
         <label>Age:</label>
         <input type="number" id="age">
         <small id="ageError"></small>
@@ -47,6 +53,7 @@ form.addEventListener("submit", function(event) {
     const name = document.getElementById("name").value;
     const email = document.getElementById("email").value;
     const password = document.getElementById("password").value;
+    const confirmpassword = document.getElementById("confirm-password").value;
     const age = document.getElementById("age").value;
 
     if (name === "") {
@@ -65,6 +72,9 @@ form.addEventListener("submit", function(event) {
         
    
         return;
+    }
+    if( password != confirmpassword){
+        alert("passwords do not match");
     }
     if (age === "") {
         alert("Please enter your age");
