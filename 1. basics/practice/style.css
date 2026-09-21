@@ -1,0 +1,255 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: #111;
+    color: white;
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+
+h1 {
+    margin: 15px 0;
+}
+
+/* GAME AREA */
+
+.game {
+    width: 420px;
+    height: 650px;
+    margin: auto;
+    overflow: hidden;
+    position: relative;
+}
+
+/* ROAD */
+
+.road {
+    width: 320px;
+    height: 100%;
+    margin: auto;
+    position: relative;
+
+    background:
+        repeating-linear-gradient(
+            0deg,
+            #292929 0px,
+            #292929 8px,
+            #303030 9px,
+            #292929 15px
+        );
+
+    border-left: 8px solid #ddd;
+    border-right: 8px solid #ddd;
+
+    overflow: hidden;
+}
+
+/* Road lane markings */
+
+.lane {
+    position: absolute;
+    top: 0;
+    width: 6px;
+    height: 100%;
+
+    background: repeating-linear-gradient(
+        to bottom,
+        white 0px,
+        white 55px,
+        transparent 55px,
+        transparent 110px
+    );
+
+    animation: roadMove 0.6s linear infinite;
+}
+
+.lane1 {
+    left: 98px;
+}
+
+.lane2 {
+    right: 98px;
+}
+
+@keyframes roadMove {
+
+    from {
+        transform: translateY(-110px);
+    }
+
+    to {
+        transform: translateY(0);
+    }
+
+}
+
+/* CAR */
+
+.car {
+    width: 55px;
+    height: 100px;
+    position: absolute;
+
+    border-radius: 13px;
+
+    box-shadow:
+        0 5px 10px rgba(0,0,0,0.7),
+        inset 0 0 8px rgba(255,255,255,0.4);
+
+    z-index: 5;
+}
+
+/* PLAYER */
+
+.player-car {
+
+    background:
+        linear-gradient(
+            to right,
+            #8b0000,
+            #ff2222,
+            #a00000
+        );
+
+    bottom: 40px;
+    left: 125px;
+}
+
+/* ENEMY */
+
+.enemy-car {
+
+    background:
+        linear-gradient(
+            to right,
+            #001c8a,
+            #155cff,
+            #001b80
+        );
+
+    top: -120px;
+    left: 30px;
+}
+
+/* WINDOWS */
+
+.window {
+
+    position: absolute;
+    left: 8px;
+    width: 39px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #111,
+            #5e7585,
+            #111
+        );
+
+    border-radius: 7px;
+}
+
+.front-window {
+    top: 10px;
+    height: 27px;
+}
+
+.back-window {
+    top: 43px;
+    height: 20px;
+}
+
+/* LIGHTS */
+
+.headlight {
+
+    position: absolute;
+    width: 10px;
+    height: 6px;
+
+    background: #fff9a0;
+
+    border-radius: 4px;
+
+    box-shadow: 0 0 8px #fff;
+}
+
+.left-light {
+    left: 7px;
+    top: 3px;
+}
+
+.right-light {
+    right: 7px;
+    top: 3px;
+}
+
+/* WHEELS */
+
+.wheel {
+
+    position: absolute;
+    width: 9px;
+    height: 23px;
+
+    background: #111;
+
+    border-radius: 4px;
+}
+
+.wheel1 {
+    left: -6px;
+    top: 15px;
+}
+
+.wheel2 {
+    right: -6px;
+    top: 15px;
+}
+
+.wheel3 {
+    left: -6px;
+    bottom: 15px;
+}
+
+.wheel4 {
+    right: -6px;
+    bottom: 15px;
+}
+
+/* INFO */
+
+.info {
+    margin-top: 10px;
+}
+
+.info h2,
+.info h3 {
+    margin: 5px;
+}
+
+/* BUTTON */
+
+button {
+
+    padding: 12px 25px;
+
+    background: #e63946;
+    color: white;
+
+    border: none;
+    border-radius: 6px;
+
+    font-size: 16px;
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+button:hover {
+    background: #ff4d5a;
+}
