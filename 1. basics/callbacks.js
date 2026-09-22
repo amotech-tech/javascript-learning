@@ -68,3 +68,16 @@ const promiseTwo = new Promise((resolve,reject)=>{
 Promise.all([promiseone,promiseTwo])
 .then((date)=>console.log(date[0],data[1]))
 .catch((error)=>console.log(error));
+//asynch-await
+async function getUsers() {
+    try {
+        const response = await fetch(
+            "https://jsonplaceholder.typicode.com/users"
+        );
+        const users = await response.json();
+        console.log(users);
+} catch (error) {
+        console.log("Something went wrong:", error);
+    }
+}
+getUsers();
