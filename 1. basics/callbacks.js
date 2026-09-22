@@ -37,12 +37,14 @@ task2(()=>{
 })
 ///promises
 const promise = new promise((resolve, reject)=>{
-    const allWentWell= true;
-    if(allWentWell){
-        resolve('all things went well')
-    }
-    else{
-        reject('oops! something went wrong')
-    }
+    const randomNumber=Math.floor(Math.random()*10);
+    setTimeout(()=>{
+        if(randomNumber<4){
+            resolve('Well Done you guessed right')
+        }
+        else{
+            reject('oops you guessed wrong,ublucky')
+        }
+    }, 2000)
 });
 console.log(promise)
