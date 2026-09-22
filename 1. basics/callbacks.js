@@ -52,3 +52,19 @@ promise.then((value)=>{
 }).catch((error)=>{
     console.log(error)
 });
+
+
+//promise.all
+const promiseone = new Promise((resolve,reject)=>{
+    setTimeout(()=>{
+        resolve('promise one resolved')
+    },2000);
+});
+const promiseTwo = new Promise((resolve,reject)=>{
+    setTimeout(()=>{
+        resolve('promise two resolved')
+    },1500);
+});
+Promise.all([promiseone,promiseTwo])
+.then((date)=>console.log(date[0],data[1]))
+.catch((error)=>console.log(error));
