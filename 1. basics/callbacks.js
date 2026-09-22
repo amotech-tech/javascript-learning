@@ -35,3 +35,14 @@ task2(()=>{
         
     })
 })
+///promises
+const promise = new promise((resolve, reject)=>{
+    const allWentWell= true;
+    if(allWentWell){
+        resolve('all things went well')
+    }
+    else{
+        reject('oops! something went wrong')
+    }
+});
+console.log(promise)
